@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -12,6 +13,9 @@ class DetalhesVagas: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detalhesvagas)
+        val desc =  getIntent().getSerializableExtra("detalhesVaga") as VagaAdapter.Vaga
+        val textView = findViewById<TextView>(R.id.textView3)
+        textView.text = desc.cargo
 
         val button = findViewById<Button>(R.id.botao_voltarconsultavagas)
         val botao = findViewById<Button>(R.id.botao_candidatarvagas)

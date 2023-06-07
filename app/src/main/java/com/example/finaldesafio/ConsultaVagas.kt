@@ -52,7 +52,12 @@ class ConsultaVagas : AppCompatActivity() {
 
 
 // Crie uma instância do adaptador VagaAdapter e passe a lista de vagas para ele
-        val vagaAdapter = VagaAdapter(listaDeVagas)
+        val vagaAdapter = VagaAdapter(listaDeVagas){vaga ->
+        val detalhesVaga = Intent (this,DetalhesVagas::class.java)
+            detalhesVaga.putExtra("detalhesVaga", vaga);
+         startActivity(detalhesVaga)
+        }
+
 
 // Defina o layout manager para o RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)

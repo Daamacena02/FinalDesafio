@@ -5,8 +5,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finaldesafio.R
 import com.google.android.material.button.MaterialButton
+import java.io.Serializable
 
-class VagaAdapter(private val vagas: List<Vaga>) : RecyclerView.Adapter<VagaAdapter.VagaViewHolder>() {
+class VagaAdapter(
+    private val vagas: List<Vaga>,
+    private val onclickListener:(Vaga)-> Unit
+) : RecyclerView.Adapter<VagaAdapter.VagaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VagaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_vaga, parent, false)
@@ -21,7 +25,7 @@ class VagaAdapter(private val vagas: List<Vaga>) : RecyclerView.Adapter<VagaAdap
         val telefone: String,
         val dataInicio: String,
         val dataTermino: String
-    )
+    ): Serializable
     override fun onBindViewHolder(holder: VagaViewHolder, position: Int) {
         val vaga = vagas[position]
         holder.bind(vaga)
@@ -55,7 +59,8 @@ class VagaAdapter(private val vagas: List<Vaga>) : RecyclerView.Adapter<VagaAdap
             textViewDataTermino.text = vaga.dataTermino
 
             botaoVerVaga.setOnClickListener {
-                // Ação a ser executada quando o botão "Ver vaga" for clicado
+                // Ação a ser executada quando o botão "Ver vaga" for clicado //
+            onclickListener (vaga)
             }
         }
     }
