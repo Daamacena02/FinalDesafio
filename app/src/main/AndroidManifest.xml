@@ -20,13 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cadastro" />
         <activity android:name=".ConsultaVagas" />
         <activity android:name=".CadastroAnunciante" />
-        <activity android:name=".VerVaga" />
-        <activity android:name=".Login" />
         <activity android:name=".Perfil" />
         <activity android:name=".EditarPerfil" />
+        <activity android:name=".RecuperarSenha" />
 
 
 

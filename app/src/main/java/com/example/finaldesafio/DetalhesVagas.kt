@@ -7,19 +7,26 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class CadastroAnunciante: AppCompatActivity() {
+class DetalhesVagas: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.cadastroanunciante)
+        setContentView(R.layout.detalhesvagas)
 
-        val button = findViewById<Button>(R.id.button3)
+        val button = findViewById<Button>(R.id.botao_voltarconsultavagas)
+        val botao = findViewById<Button>(R.id.botao_candidatarvagas)
 
         val text = "Cadastro efetuado com sucesso!"
         val duration = Toast.LENGTH_SHORT
 
         button.setOnClickListener {
-            val botao = Intent(this, ConsultaVagas::class.java)
+            finish()
+            val toast = Toast.makeText(applicationContext, text, duration)
+            toast.show()
+        }
+
+        button.setOnClickListener {
+            val botao = Intent(this, DetalhesVagas::class.java)
             startActivity(botao)
             val toast = Toast.makeText(applicationContext, text, duration)
             toast.show()
