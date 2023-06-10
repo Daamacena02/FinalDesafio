@@ -23,6 +23,8 @@ class DetalhesVagas: AppCompatActivity() {
 
 
 
+
+
         val button = findViewById<Button>(R.id.botao_voltarconsultavagas)
         val botao = findViewById<Button>(R.id.botao_candidatarvagas)
 
