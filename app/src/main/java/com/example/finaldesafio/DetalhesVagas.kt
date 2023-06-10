@@ -19,7 +19,7 @@ class DetalhesVagas: AppCompatActivity() {
 
         val cargo =  getIntent().getSerializableExtra("detalhesVaga") as VagaAdapter.Vaga
         val textView2 = findViewById<TextView>(R.id.textView4)
-        textView.text = desc.cargo
+        textView2.text = desc.cargo
 
 
 
