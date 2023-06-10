@@ -15,7 +15,13 @@ class DetalhesVagas: AppCompatActivity() {
         setContentView(R.layout.detalhesvagas)
         val desc =  getIntent().getSerializableExtra("detalhesVaga") as VagaAdapter.Vaga
         val textView = findViewById<TextView>(R.id.textView3)
+        textView.text = desc.anunciante
+
+        val cargo =  getIntent().getSerializableExtra("detalhesVaga") as VagaAdapter.Vaga
+        val textView2 = findViewById<TextView>(R.id.textView4)
         textView.text = desc.cargo
+
+
 
         val button = findViewById<Button>(R.id.botao_voltarconsultavagas)
         val botao = findViewById<Button>(R.id.botao_candidatarvagas)
